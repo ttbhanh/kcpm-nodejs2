@@ -1,0 +1,20 @@
+<script>
+    function Mortgage(male, age, salary) {
+        if (male) {
+            return ((18 <= age && age < 35) ? (75 * salary) : ((31 <= age && age < 40) ? (55 * salary) : (30 * salary)));
+        } else {
+            return ((18 <= age && age < 30) ? (75 * salary) : ((31 <= age && age < 40) ? (50 * salary) : (35 * salary)))
+        }
+    }
+
+    $(document).ready(() => {
+        $('#form-mortgage').on('submit', () => {
+            var male = $("input[name='gender']:checked").val();
+            var age = $('#age').val();
+            var salary = $('#salary').val();
+            var mortgage = Mortgage(male, age, salary);
+            $('#mortgage').html(mortgage);
+            return false;
+        });
+    });
+</script>

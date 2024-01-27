@@ -1,0 +1,16 @@
+<!-- Articles -->
+<div class="container">
+    <div class="row">
+        {{#each articles}}
+        <div class="col-md-4">
+            <div class="thumbnail">
+                <a href="/articles/{{id}}"><img src="{{imagepath}}" /></a>
+            </div>
+            <article>
+                <h2><a href="/articles/{{id}}">{{title}}</a></h2>
+                <div>{{summary}}</div>
+            </article>
+        </div>
+        {{/each}}
+    </div>
+</div>

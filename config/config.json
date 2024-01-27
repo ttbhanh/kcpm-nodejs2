@@ -1,0 +1,30 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "postgres",
+    "database": "kcpm_nodejs2",
+    "host": "postgresql",
+    "dialect": "postgres",
+    "port": 5432
+  },
+  "test": {
+    "username": "postgres",
+    "password": "postgres",
+    "database": "kcpm_nodejs2",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "rblhyqcf",
+    "password": "haKazCS8aT2PDdTfDDVouEDUeo5x_Q9B",
+    "database": "rblhyqcf",
+    "host": "mahmud.db.elephantsql.com",
+    "dialect": "postgres",
+    "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false
+      }
+    }
+  }
+}

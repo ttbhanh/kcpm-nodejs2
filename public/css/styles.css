@@ -1,0 +1,51 @@
+body {
+    font-family: "Sentinel SSm A", "Sentinel SSm B";
+    font-size: 18px;
+    line-height: 1.65;
+    color: gray;
+    padding-top: 50px;
+}
+
+#logo {
+    margin-top: -60px;
+    height: 130px;
+}
+
+h1 {
+    font-weight: 300;
+    font-size: 70px;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 25px;
+    margin-left: 0px;
+    margin-bottom: 10px;
+}
+
+h2 a {
+    text-decoration: none;
+    color: gray;
+}
+
+footer {
+    text-align: center;
+}
+
+#chat {
+    height: 200px;
+    margin: 30px;
+}
+
+#chatWrap {
+    border-right: 1px #000 solid;
+}
+
+.error {
+    color: red;
+}
+
+.whisper {
+    color: gray;
+    font-style: italic;
+}

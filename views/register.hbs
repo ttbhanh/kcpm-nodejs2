@@ -1,0 +1,57 @@
+<div class="container">
+    <form class="form-horizontal" action="/register" method="post">
+        <fieldset>
+            <!-- Form Name -->
+            <legend class="text-center">Register Form</legend>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="username">Username</label>
+                <div class="col-md-4">
+                    <input id="username" name="username" type="text" placeholder="" class="form-control input-md"
+                        required="" value="">
+                </div>
+            </div>
+
+            <!-- Password input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="password">Password</label>
+                <div class="col-md-4">
+                    <input id="password" name="password" type="password" placeholder="" class="form-control input-md"
+                        required="" value="" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                        title="Password must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                        onchange="
+                            this.setCustomValidity(this.validity.patternMismatch ? this.title : '');
+                            if(this.checkValidity()) form.confirm_password.pattern = RegExp.escape(this.value);
+                            ">
+                </div>
+            </div>
+
+            <!-- Confirm Password input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="confirm_password">Confirmed Password</label>
+                <div class="col-md-4">
+                    <input id="confirm_password" name="confirm_password" type="password" placeholder=""
+                        class="form-control input-md" required="" value=""
+                        title="Please enter the same Password as above" type="password"
+                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" onchange="
+                            this.setCustomValidity(this.validity.patternMismatch ? this.title : '');
+                            ">
+                </div>
+            </div>
+
+            <!-- Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="login"></label>
+                <div class="col-md-4">
+                    <button id="register" name="register" class="btn btn-primary">Register</button>
+                    <p class="text-danger">
+                        {{ error }}
+                    </p>
+                </div>
+            </div>
+
+        </fieldset>
+    </form>
+
+</div>

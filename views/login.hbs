@@ -1,0 +1,48 @@
+<div class="container">
+    <form class="form-horizontal" action="/login" method="post">
+        <fieldset>
+            <!-- Form Name -->
+            <legend class="text-center">Login Form</legend>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="username">Username</label>
+                <div class="col-md-4">
+                    <input id="username" name="username" type="text" placeholder="" class="form-control input-md"
+                        required="" value="{{ username }}">
+                </div>
+            </div>
+
+            <!-- Password input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="password">Password</label>
+                <div class="col-md-4">
+                    <input id="password" name="password" type="password" placeholder="" class="form-control input-md"
+                        required="" value="{{  password }}">
+
+                </div>
+            </div>
+            <!--  Checkbox -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="checkbox"></label>
+                <div class="col-md-4">
+                    <div class="checkbox">
+                        <label for="checkbox-0">
+                            <input type="checkbox" name="checkbox" id="checkbox" value="true"> Remember me
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!-- Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="login"></label>
+                <div class="col-md-4">
+                    <button id="login" name="login" class="btn btn-primary">Login</button>
+                    <p class="text-danger">
+                        {{ error }}
+                    </p>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>

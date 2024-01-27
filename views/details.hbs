@@ -1,0 +1,55 @@
+<!-- Article -->
+{{#with article}}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>{{title}}</h2>
+            <div class="thumbnail">
+                <img src="{{imagepath}}" />
+            </div>
+            <div class="text-justify">{{{description}}}</div>
+
+
+            <h3>Comments</h3>
+
+            {{#if ../user}}
+            <form method="post" action="/comments">
+                <div class="form-group">
+                    <label for="comment" class="control-label">Add a new comment</label>
+                    <textarea name="comment" class="form-control" rows="3" maxlength="255" required></textarea>
+                    <input type='hidden' name='articleId' value="{{id}}" />
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Post</button>
+                </div>
+                <p class="text-danger">
+                    {{../error}}
+                </p>
+            </form>
+            {{else}}
+            {{#unless Comments.length}}
+            <div>There is no comment.</div>
+            {{/unless}}
+            {{/if}}
+
+            <ul {{#if ../user}}class='list-unstyled' {{/if}}>
+                {{#each Comments}}
+                <li>
+                    {{#if ../../user.isAdmin}}
+                    <button class="btn btn-danger btn-xs delete-comment" data-id="{{id}}" data-article="{{ArticleId}}">
+                        <span class='glyphicon glyphicon-remove' aria-hidden='true'></span>
+                    </button>
+                    {{/if}}
+                    <div style="word-wrap: break-word;">
+                        {{User.username}} - {{content}} (<small> {{formatDate updatedAt}} </small>)
+                    </div>
+                    <br />
+                </li>
+                {{/each}}
+            </ul>
+            {{{ paginate ../pagination leftText="Prev" rightText="Next" limit="3"}}}
+
+        </div>
+    </div>
+</div>
+{{/with}}
